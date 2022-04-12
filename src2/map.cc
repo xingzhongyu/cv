@@ -331,9 +331,10 @@ string getDepthData(Mat &depth)
     std::string encoded = base64Encode(enc_msg, buf.size());
     return encoded;
 }
-/*********************************************主要算法**************************************************/
-// 极线搜索
-// 方法见书 12.2 12.3 两节
+
+
+
+
 bool epipolarSearch(
     const Mat &ref, const Mat &curr,
     const SE3 &T_C_R, const Vector2d &pt_ref,
@@ -346,33 +347,32 @@ bool epipolarSearch(
     // cout<<"f_ref.normalize()"<<f_ref<<endl;
     Vector3d P_ref = f_ref * depth_mu; // 参考帧的 P 向量
 
-    Vector2d px_mean_curr = cam2px(T_C_R * P_ref);                             // 按深度均值投影的像素
+    Vector2d px_mean_curr = cam2px(T_C_R * P_ref);                             
     double d_min = depth_mu - 3 * depth_cov, d_max = depth_mu + 3 * depth_cov; //(u-3q,u+3q)
     if (d_min < 0.1)
         d_min = 0.1;
-    Vector2d px_min_curr = cam2px(T_C_R * (f_ref * d_min)); // 按最小深度投影的像素
-    Vector2d px_max_curr = cam2px(T_C_R * (f_ref * d_max)); // 按最大深度投影的像素
+    Vector2d px_min_curr = cam2px(T_C_R * (f_ref * d_min)); 
+    Vector2d px_max_curr = cam2px(T_C_R * (f_ref * d_max));
 
-    Vector2d epipolar_line = px_max_curr - px_min_curr; // 极线（线段形式）
-    epipolar_direction = epipolar_line;                 // 极线方向
-    epipolar_direction.normalize();                     //对所有数据进行归一化，相当于等比例缩小
-    double half_length = 0.5 * epipolar_line.norm();    // 极线线段的半长度
+    Vector2d epipolar_line = px_max_curr - px_min_curr; 
+    epipolar_direction = epipolar_line;                 
+    epipolar_direction.normalize();                    
+    double half_length = 0.5 * epipolar_line.norm();    
     if (half_length > 100)
-        half_length = 100; // 我们不希望搜索太多东西
+        half_length = 100; 
 
-    // 取消此句注释以显示极线（线段）
-    // showEpipolarLine( ref, curr, pt_ref, px_min_curr, px_max_curr );
+  
 
     // 在极线上搜索，以深度均值点为中心，左右各取半长度
     double best_ncc = -1.0;
     Vector2d best_px_curr;
     for (double l = -half_length; l <= half_length; l += 0.7)
-    {                                                             // l+=sqrt(2)
-        Vector2d px_curr = px_mean_curr + l * epipolar_direction; // 待匹配点
+    {                                                             
+        Vector2d px_curr = px_mean_curr + l * epipolar_direction; /
         if (!inside(px_curr))
             continue;
         // 计算待匹配点与参考帧的 NCC
-        double ncc = NCC(ref, curr, pt_ref, px_curr); // ref:参考图像curr:当前图像pt_ref:参考点px_curr:待匹配点
+        double ncc = NCC(ref, curr, pt_ref, px_curr); 
         if (ncc > best_ncc)
         {
             best_ncc = ncc;
@@ -384,7 +384,7 @@ bool epipolarSearch(
     pt_curr = best_px_curr;
     return true;
 }
-/*****************************计算两张图像像素块的相关性***********************************************/
+
 double NCC(
     const Mat &ref, const Mat &curr,
     const Vector2d &pt_ref, const Vector2d &pt_curr)
@@ -398,18 +398,14 @@ double NCC(
         {
             double value_ref = double(ref.ptr<uchar>(int(y + pt_ref(1, 0)))[int(x + pt_ref(0, 0))]) / 255.0;
             mean_ref += value_ref;
-            //依次累加窗口内的值，得到参考帧中极线上某个点所在块内的灰度值之和
             double value_curr = getBilinearInterpolatedValue(curr, pt_curr + Vector2d(x, y));
             mean_curr += value_curr;
-            //依次累加窗口内的值，得到当前帧中极线上的对应点所在块内的灰度值之和，注意这里用的是双线性插值法
             values_ref.push_back(value_ref);
             values_curr.push_back(value_curr);
         }
-    //除以面积，得到均值
     mean_ref /= ncc_area;
     mean_curr /= ncc_area;
 
-    // 计算 Zero mean NCC(公式13.12)
     double numerator = 0, demoniator1 = 0, demoniator2 = 0;
     for (int i = 0; i < values_ref.size(); i++)
     {
@@ -437,17 +433,6 @@ bool updateDepthFilter(
     Vector3d f_curr = px2cam(pt_curr); //当前点像素转换为相机坐标系的坐标
     f_curr.normalize();                //归一化处理
 
-    // 方程
-    // d_ref * f_ref = d_cur * ( R_RC * f_cur ) + t_RC（视觉SLAM十四讲P156,公式7.24）
-    // f2 = R_RC * f_cur
-    // 转化成下面这个矩阵方程组
-    // => [ f_ref^T f_ref, -f_ref^T f2 ] [d_ref]   [f_ref^T t]
-    //    [ f_cur^T f_ref, -f2^T f2    ] [d_cur] = [f2^T t   ]
-
-    //重点：
-    // s1*x1=s2*R*x2+t,移项得到s1*x1-s2*R*x2=t   (1)
-    //(1)两边同乘x1的转置x1T，得s1*x1T*x1-s2*x1T*R*x2=x1T*t   (2) 注意"T"指的是转置的意思
-    //因此接下来的A[]就是存放未知数为s1和s2的线性方程组的系数矩阵，b存放方程组右端的两个常数
     // cout<<"fref"<<f_ref<<endl;
     Vector3d t = T_R_C.translation();
     // cout<<"t"<<t<<endl;
@@ -471,22 +456,20 @@ bool updateDepthFilter(
     Vector3d a = p - t; // 327公式13.7
     double t_norm = t.norm();
     double a_norm = a.norm();
-    double alpha = acos(f_ref.dot(t) / t_norm);                   // a=arccos<p,t>
-    double beta = acos(-a.dot(t) / (a_norm * t_norm));            // beta=arccos<a,-t>
+    double alpha = acos(f_ref.dot(t) / t_norm);                  
+    double beta = acos(-a.dot(t) / (a_norm * t_norm));          
     Vector3d f_curr_prime = px2cam(pt_curr + epipolar_direction); //
     f_curr_prime.normalize();
-    double beta_prime = acos(f_curr_prime.dot(-t) / t_norm); //计算beta'
-    double gamma = M_PI - alpha - beta_prime;                //计算y'
-    double p_prime = t_norm * sin(beta_prime) / sin(gamma);  //计算p‘的大小||p'||
-    double d_cov = p_prime - depth_estimation;               //计算sigma/obs
-    double d_cov2 = d_cov * d_cov;                           //计算方差
-
-    // 高斯融合
-    //新的数据到来的深度估计均值以及方差
+    double beta_prime = acos(f_curr_prime.dot(-t) / t_norm); 
+    double gamma = M_PI - alpha - beta_prime;               
+    double p_prime = t_norm * sin(beta_prime) / sin(gamma);  
+    double d_cov = p_prime - depth_estimation;               
+    double d_cov2 = d_cov * d_cov;                         
+    
     double mu = depth.ptr<double>(int(pt_ref(1, 0)))[int(pt_ref(0, 0))];
     double sigma2 = depth_cov2.ptr<double>(int(pt_ref(1, 0)))[int(pt_ref(0, 0))];
-    //具体高斯融合
-    double mu_fuse = (d_cov2 * mu + sigma2 * depth_estimation) / (sigma2 + d_cov2); //公式13.6
+   
+    double mu_fuse = (d_cov2 * mu + sigma2 * depth_estimation) / (sigma2 + d_cov2); 
     double sigma_fuse2 = (sigma2 * d_cov2) / (sigma2 + d_cov2);
     //融合后的高斯分布
     depth.ptr<double>(int(pt_ref(1, 0)))[int(pt_ref(0, 0))] = mu_fuse;
@@ -506,27 +489,18 @@ void find_feature_matches(const Mat &img_1, const Mat &img_2,
     // used in OpenCV3
     Ptr<FeatureDetector> detector = ORB::create();
     Ptr<DescriptorExtractor> descriptor = ORB::create();
-    // use this if you are in OpenCV2
-    // Ptr<FeatureDetector> detector = FeatureDetector::create ( "ORB" );
-    // Ptr<DescriptorExtractor> descriptor = DescriptorExtractor::create ( "ORB" );
     Ptr<DescriptorMatcher> matcher = DescriptorMatcher::create("BruteForce-Hamming");
-    //-- 第一步:检测 Oriented FAST 角点位置
     detector->detect(img_1, keypoints_1);
     detector->detect(img_2, keypoints_2);
 
-    //-- 第二步:根据角点位置计算 BRIEF 描述子
     descriptor->compute(img_1, keypoints_1, descriptors_1);
     descriptor->compute(img_2, keypoints_2, descriptors_2);
 
-    //-- 第三步:对两幅图像中的BRIEF描述子进行匹配，使用 Hamming 距离
     vector<DMatch> match;
-    // BFMatcher matcher ( NORM_HAMMING );
     matcher->match(descriptors_1, descriptors_2, match);
 
-    //-- 第四步:匹配点对筛选
     double min_dist = 10000, max_dist = 0;
 
-    //找出所有匹配之间的最小距离和最大距离, 即是最相似的和最不相似的两组点之间的距离
     for (int i = 0; i < descriptors_1.rows; i++)
     {
         double dist = match[i].distance;
@@ -540,7 +514,6 @@ void find_feature_matches(const Mat &img_1, const Mat &img_2,
 
     // printf ( "-- Min dist : %f \n", min_dist );
 
-    //当描述子之间的距离大于两倍的最小距离时,即认为匹配有误.但有时候最小距离会非常小,设置一个经验值30作为下限.
     for (int i = 0; i < descriptors_1.rows; i++)
     {
         if (match[i].distance <= max(2 * min_dist, 30.0))
@@ -579,15 +552,39 @@ void pose_estimation_2d2d(std::vector<KeyPoint> keypoints_1,
     Mat essential_matrix;
     essential_matrix = findEssentialMat(points1, points2, K);
 
-    // cout<<"essential_matrix is "<<endl<< essential_matrix<<endl;
-
-    //-- 计算单应矩阵
-    // Mat homography_matrix;
-    // homography_matrix = findHomography ( points1, points2, RANSAC, 3 );
-    // cout<<"homography_matrix is "<<endl<<homography_matrix<<endl;
-
-    //-- 从本质矩阵中恢复旋转和平移信息.
     recoverPose(essential_matrix, points1, points2, K, R, t);
     // cout<<"R is "<<endl<<R<<endl;
     // cout<<"t is "<<endl<<t<<endl;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
