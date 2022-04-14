@@ -65,12 +65,12 @@ int main(int argc, char **argv)
     vector<cv::Mat> colorImgs, depthImgs; // 彩色图和深度图
     vector<Eigen::Isometry3d> poses;      // 相机位姿
     vector<Eigen::Isometry3d> pose1;
-    ifstream fin("/home/guojiawei/cv/cv/after/data/pose.txt");
-    if (!fin)
-    {
-        cerr << "cannot find pose file" << endl;
-        return 1;
-    }
+    // ifstream fin("/home/guojiawei/cv/cv/after/data/pose.txt");
+    // if (!fin)
+    // {
+    //     cerr << "cannot find pose file" << endl;
+    //     return 1;
+    // }
 
     for (int i = 0; i < 5; i++)
     {
@@ -78,15 +78,15 @@ int main(int argc, char **argv)
         colorImgs.push_back(cv::imread((fmt % "color" % (i + 1) % "png").str()));
         depthImgs.push_back(cv::imread((fmt % "depth" % (i + 1) % "pgm").str(), -1)); // 使用-1读取原始图像
 
-        double data[7] = {0};
-        for (int i = 0; i < 7; i++)
-        {
-            fin >> data[i];
-        }
-        Eigen::Quaterniond q( data[6], data[3], data[4], data[5] );
-        Eigen::Isometry3d T(q);
-        T.pretranslate( Eigen::Vector3d( data[0], data[1], data[2] ));
-        poses.push_back( T );
+        // double data[7] = {0};
+        // for (int i = 0; i < 7; i++)
+        // {
+        //     fin >> data[i];
+        // }
+        // Eigen::Quaterniond q( data[6], data[3], data[4], data[5] );
+        // Eigen::Isometry3d T(q);
+        // T.pretranslate( Eigen::Vector3d( data[0], data[1], data[2] ));
+        // poses.push_back( T );
 
         vector<KeyPoint> keypoints_1, keypoints_2;
         vector<DMatch> matches;
@@ -124,12 +124,12 @@ int main(int argc, char **argv)
                     continue;
                 Point2d p1 = pixel2cam(keypoints_1[m.queryIdx].pt, K);
                 Point2d p2 = pixel2cam(keypoints_2[m.trainIdx].pt, K);
-                float dd1 = float(d1) / 1000.0;
-                float dd2 = float(d2) / 1000.0;
+                float dd1 = float(d1) / depthScale;
+                float dd2 = float(d2) / depthScale;
                 pts1.push_back(Point3f(p1.x * dd1, p1.y * dd1, dd1));
                 pts2.push_back(Point3f(p2.x * dd2, p2.y * dd2, dd2));
             }
-            cout<<pts2.size()<<endl;
+            // cout<<pts2.size()<<endl;
 
             // cout << "3d-3d pairs: " << pts1.size() << endl;
             pose_estimation_3d3d(pts1, pts2, R, t);
@@ -152,12 +152,12 @@ int main(int argc, char **argv)
             {
                 Eigen::Isometry3d temp = pose1[pose1.size() - 1];
                 pose1.push_back(temp * T1);
-                 Eigen::Isometry3d T3=poses[i-1].inverse()*poses[i];
-                 cout<<T1.matrix()<<endl;
-                // cout<<R<<endl;
-                // cout<<t<<endl;
-                 cout<<"------"<<endl;
-                 cout<<T3.matrix()<<endl;
+                //  Eigen::Isometry3d T3=poses[i-1].inverse()*poses[i];
+                //  cout<<T1.matrix()<<endl;
+                // // cout<<R<<endl;
+                // // cout<<t<<endl;
+                //  cout<<"------"<<endl;
+                //  cout<<T3.matrix()<<endl;
 
                 
                 // int te = pose1.size();
@@ -192,13 +192,13 @@ int main(int argc, char **argv)
         cv::Mat color = colorImgs[i];
         cv::Mat depth = depthImgs[i];
         Eigen::Isometry3d T;
-        Eigen::Isometry3d T2;
+        // Eigen::Isometry3d T2;
         if (i > 0)
         {
             T = pose1[i-1];
             // std::cout<<Eigen::Isometry3d(T).matrix()<<endl;
-            cout<<"------"<<endl;
-            T2=poses[0].inverse()  *poses[i];
+            // cout<<"------"<<endl;
+            // T2=poses[0].inverse()  *poses[i];
         // cout<<(poses[0].inverse()  *poses[i]).matrix()<<endl;
         
         }
@@ -461,7 +461,7 @@ void find_feature_matches(const Mat &img_1, const Mat &img_2,
     //当描述子之间的距离大于两倍的最小距离时,即认为匹配有误.但有时候最小距离会非常小,设置一个经验值30作为下限.
     for (int i = 0; i < descriptors_1.rows; i++)
     {
-        if (match[i].distance <= max(2 * min_dist, 45.0))
+        if (match[i].distance <= max(2 * min_dist, 70.0))
 
 
         {
