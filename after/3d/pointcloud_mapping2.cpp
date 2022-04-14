@@ -168,7 +168,7 @@ int main(int argc, char **argv)
         cv::Mat depth = depthImgs[i];
         Eigen::Isometry3d T;
         if(i>0){
-        T = pose1[i];
+        T = pose1[i-1];
 
         }
         for (int v = 0; v < color.rows; v++)
