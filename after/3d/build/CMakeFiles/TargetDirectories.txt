@@ -1,0 +1,4 @@
+/home/guojiawei/cv/cv/after/3d/build/CMakeFiles/test.dir
+/home/guojiawei/cv/cv/after/3d/build/CMakeFiles/pointcloud_mapping.dir
+/home/guojiawei/cv/cv/after/3d/build/CMakeFiles/edit_cache.dir
+/home/guojiawei/cv/cv/after/3d/build/CMakeFiles/rebuild_cache.dir
