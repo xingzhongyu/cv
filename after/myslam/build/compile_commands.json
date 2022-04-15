@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/camera.cpp.o -c /home/xzy/CLionProjects/myslam/src/camera.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/camera.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/frame.cpp.o -c /home/xzy/CLionProjects/myslam/src/frame.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/frame.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/testPoint.cpp.o -c /home/xzy/CLionProjects/myslam/src/testPoint.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/testPoint.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/config.cpp.o -c /home/xzy/CLionProjects/myslam/src/config.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/config.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/visual_odometry.cpp.o -c /home/xzy/CLionProjects/myslam/src/visual_odometry.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/visual_odometry.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/map.cpp.o -c /home/xzy/CLionProjects/myslam/src/map.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/map.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/mappoint.cpp.o -c /home/xzy/CLionProjects/myslam/src/mappoint.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/mappoint.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/__/test/run_vo.cpp.o -c /home/xzy/CLionProjects/myslam/test/run_vo.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/test/run_vo.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/src",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dmyslam_EXPORTS -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG -fPIC   -std=gnu++14 -o CMakeFiles/myslam.dir/g2o_types.cpp.o -c /home/xzy/CLionProjects/myslam/src/g2o_types.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/src/g2o_types.cpp"
+},
+{
+  "directory": "/home/xzy/CLionProjects/myslam/build/test",
+  "command": "/usr/bin/g++  -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DGFLAGS_DLL_DECLARE_FLAG=\"\" -DGFLAGS_DLL_DEFINE_FLAG=\"\" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=\"\" -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/home/xzy/Downloads/Sophus -I/home/xzy/CLionProjects/myslam/include -isystem /usr/include/eigen3 -isystem /usr/include/opencv4 -isystem /usr/include/vtk-7.1 -isystem /usr/include/freetype2 -isystem /usr/include/pcl-1.10 -isystem /usr/include/ni -isystem /usr/include/openni2    -O3 -DNDEBUG   -std=gnu++14 -o CMakeFiles/run_vo.dir/run_vo.cpp.o -c /home/xzy/CLionProjects/myslam/test/run_vo.cpp",
+  "file": "/home/xzy/CLionProjects/myslam/test/run_vo.cpp"
+}
+]
