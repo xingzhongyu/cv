@@ -1,0 +1,9 @@
+{
+    "cmake.debugConfig": {
+        "args": ["/home/xzy/CLionProjects/myslam/config/default.yaml"]
+        
+    },
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
