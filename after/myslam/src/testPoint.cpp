@@ -30,8 +30,16 @@ namespace myslam
         statistical_filter.setInputCloud(tmp);
         statistical_filter.filter(*temp);
         (*pointCloud) += (*temp);
-        pcl::io::savePCDFileBinary("testmap.pcd",*pointCloud);
+        pcl::VoxelGrid<PointT> voex_filter;
+        voex_filter.setLeafSize(0.01,0.01,0.01);
+        PointCloud::Ptr temp2(new PointCloud);
+        voex_filter.setInputCloud(pointCloud);
+        voex_filter.filter(*temp2);
+        temp2->swap(*pointCloud);
+        bool isSave=pcl::io::savePCDFileBinary("testmap.pcd",*pointCloud);
+        cout<<isSave<<endl;
         cout<<"size="<<pointCloud->points.size()<<endl;
         tmp->clear();
+        
     }
 }
