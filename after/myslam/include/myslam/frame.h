@@ -9,6 +9,7 @@
 #include "myslam/camera.h"
 #include "myslam/testPoint.h"
 
+
 namespace myslam
 {
 
@@ -45,7 +46,7 @@ namespace myslam
 
         // check if a point is in this frame
         bool isInFrame( const Vector3d& pt_world );
-        void getPoints();
+        void getPoints(testPoint &p );
     };
 
 }

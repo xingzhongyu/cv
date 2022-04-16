@@ -9,15 +9,15 @@
 #include "myslam/config.h"
 #include "myslam/visual_odometry.h"
 
-#include <fstream>
-#include <boost/timer.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/viz.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+// #include <fstream>
+// #include <boost/timer.hpp>
+// #include <opencv2/imgcodecs.hpp>
+// #include <opencv2/highgui/highgui.hpp>
+// #include <opencv2/viz.hpp>
+// #include <opencv2/imgproc/imgproc.hpp>
 
-#include "myslam/config.h"
-#include "myslam/visual_odometry.h"
+// #include "myslam/config.h"
+// #include "myslam/visual_odometry.h"
 
 int main ( int argc, char** argv )
 {
@@ -119,6 +119,7 @@ int main ( int argc, char** argv )
         vis.spinOnce ( 1, false );
         cout<<endl;
     }
+    
 
     return 0;
 }

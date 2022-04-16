@@ -86,13 +86,13 @@ namespace myslam
                && pixel(0,0)<color_.cols
                && pixel(1,0)<color_.rows;
     }
-    void Frame::getPoints(){
+    void Frame::getPoints(testPoint &p){
         // myslam::Frame::points
         for(int y=0;y<color_.rows;y++){
             for(int x=0;x<color_.cols;x++){
                 double  d=findDepth(cv::KeyPoint(cv::Point2f(x,y),2));
                 Vector3d v=camera_->pixel2world(Vector2d(x,y),T_c_w_,d);
-                getCloudPoints(cv::Point2i(x,y),v,color_);
+                 p.getCloudPoints(cv::Point2i(x,y),v,color_);
 
                 // points.push_back(v[0]);
                 // points.push_back(v[1]);
@@ -104,7 +104,7 @@ namespace myslam
 
             }
         }
-        updateCloud();
+        p. updateCloud();
         
     }
 

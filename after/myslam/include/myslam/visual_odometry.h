@@ -52,6 +52,7 @@ namespace myslam
         double key_frame_min_rot;   // minimal rotation of two key-frames
         double key_frame_min_trans; // minimal translation of two key-frames
         double map_point_erase_ratio_;
+          testPoint p;
     public: // functions
         VisualOdometry();
         ~VisualOdometry();

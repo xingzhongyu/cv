@@ -1,7 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
 project(myslam)
 
-set(CMAKE_CXX_STANDARD 14)
+set( CMAKE_BUILD_TYPE Release )
+set( CMAKE_CXX_FLAGS "-std=c++14"  )
+
+
+
+
+
+
+
 
 list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules )
 set( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin )
@@ -24,11 +32,19 @@ include_directories( ${G2O_INCLUDE_DIRS} )
 find_package (glog REQUIRED)
 
 #PCL
-find_package(PCL 1.10 REQUIRED)
+find_package(PCL  REQUIRED)
+
+
 include_directories( ${PCL_INCLUDE_DIRS} )
 link_directories(${PCL_LIBRARY_DIRS})
 
 add_definitions(${PCL_DEFINITIONS})
+
+set(Sophus_LIBRARIES  "/usr/local/lib/libSophus.so")
+
+
+
+
 
 
 set( THIRD_PARTY_LIBS

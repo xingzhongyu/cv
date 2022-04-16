@@ -1,6 +1,6 @@
 {
     "cmake.debugConfig": {
-        "args": ["/home/xzy/CLionProjects/myslam/config/default.yaml"]
+        "args": ["/home/guojiawei/cv/cv2/cv/after/myslam/config/default.yaml"]
         
     },
     "files.associations": {

@@ -18,7 +18,7 @@
 #include <g2o/core/robust_kernel_impl.h>
 
 namespace myslam{
-    class EdgeProjectXYZRGBD : public g2o::BaseBinaryEdge<3, Eigen::Vector3d, g2o::VertexPointXYZ, g2o::VertexSE3Expmap>{
+    class EdgeProjectXYZRGBD : public g2o::BaseBinaryEdge<3, Eigen::Vector3d, g2o::VertexSBAPointXYZ, g2o::VertexSE3Expmap>{
     public:EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
         virtual void computeError();
         virtual void linearizeOplus();
