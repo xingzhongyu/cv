@@ -16,6 +16,7 @@ int main(int argc,char** argv)
         PCL_ERROR("Couldn't read file 111.pcd\n");
         return (-1);
     }
+    
     std::cout << "Loaded:"
               // 符号“->”表示提取cloud中的width
               << cloud->width * cloud->height
