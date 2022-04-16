@@ -67,7 +67,7 @@ int main ( int argc, char** argv )
     // vis.setViewerPose ( cam_pose );
 
     // world_coor.setRenderingProperty ( cv::viz::LINE_WIDTH, 2.0 );
-    camera_coor.setRenderingProperty ( cv::viz::LINE_WIDTH, 1.0 );
+    // camera_coor.setRenderingProperty ( cv::viz::LINE_WIDTH, 1.0 );
     // vis.showWidget ( "World", world_coor );
     // vis.showWidget ( "Camera", camera_coor );
 
@@ -113,10 +113,10 @@ int main ( int argc, char** argv )
         //     cv::circle ( img_show, cv::Point2f ( pixel ( 0,0 ),pixel ( 1,0 ) ), 5, cv::Scalar ( 0,255,0 ), 2 );
         // }
 
-        cv::imshow ( "image", img_show );
-        cv::waitKey ( 1 );
-        vis.setWidgetPose ( "Camera", M );
-        vis.spinOnce ( 1, false );
+        // cv::imshow ( "image", img_show );
+        // cv::waitKey ( 1 );
+        // vis.setWidgetPose ( "Camera", M );
+        // vis.spinOnce ( 1, false );
         cout<<endl;
     }
     
