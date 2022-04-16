@@ -22,6 +22,7 @@ int main(int argc,char** argv)
               << "从pcd文件中读取点云数据:"
               << std::endl;
     std::fstream fs;
+    
     //读写文件
     fs.open("./11.txt", std::fstream::out);
     //打开文件路径，没有则创建文件
