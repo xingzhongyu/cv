@@ -24,6 +24,7 @@ namespace myslam
     void testPoint::updateCloud()
     {
         if(true){
+            
         PointCloud::Ptr temp(new PointCloud);
         pcl::StatisticalOutlierRemoval<PointT> statistical_filter;
         statistical_filter.setMeanK(50);
