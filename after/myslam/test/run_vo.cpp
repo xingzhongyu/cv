@@ -21,6 +21,7 @@
 
 int main ( int argc, char** argv )
 {
+    
     if ( argc != 2 )
     {
         cout<<"usage: run_vo parameter_file"<<endl;
