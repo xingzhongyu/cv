@@ -154,6 +154,30 @@ run_vo.cpp.s:
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo.cpp.s
 .PHONY : run_vo.cpp.s
 
+run_vo2.o: run_vo2.cpp.o
+.PHONY : run_vo2.o
+
+# target to build an object file
+run_vo2.cpp.o:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo2.cpp.o
+.PHONY : run_vo2.cpp.o
+
+run_vo2.i: run_vo2.cpp.i
+.PHONY : run_vo2.i
+
+# target to preprocess a source file
+run_vo2.cpp.i:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo2.cpp.i
+.PHONY : run_vo2.cpp.i
+
+run_vo2.s: run_vo2.cpp.s
+.PHONY : run_vo2.s
+
+# target to generate assembly for a file
+run_vo2.cpp.s:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo2.cpp.s
+.PHONY : run_vo2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -166,6 +190,9 @@ help:
 	@echo "... run_vo.o"
 	@echo "... run_vo.i"
 	@echo "... run_vo.s"
+	@echo "... run_vo2.o"
+	@echo "... run_vo2.i"
+	@echo "... run_vo2.s"
 .PHONY : help
 
 

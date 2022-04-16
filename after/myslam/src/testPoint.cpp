@@ -23,6 +23,7 @@ namespace myslam
     }
     void testPoint::updateCloud()
     {
+        if(true){
         PointCloud::Ptr temp(new PointCloud);
         pcl::StatisticalOutlierRemoval<PointT> statistical_filter;
         statistical_filter.setMeanK(50);
@@ -40,6 +41,13 @@ namespace myslam
         cout<<isSave<<endl;
         cout<<"size="<<pointCloud->points.size()<<endl;
         tmp->clear();
+        }else{
+            (*pointCloud)+=(*tmp);
+            pcl::io::savePCDFileBinary("testmap.pcd",*pointCloud);
+            cout<<"size="<<pointCloud->points.size()<<endl;
+            tmp->clear();
+
+        }
         
     }
 }

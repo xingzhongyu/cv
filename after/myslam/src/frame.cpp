@@ -32,6 +32,7 @@ namespace myslam
     {
 
     }
+    
 
     Frame::~Frame()
     {

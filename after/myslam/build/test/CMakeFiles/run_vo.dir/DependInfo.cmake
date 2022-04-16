@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo.cpp" "test/CMakeFiles/run_vo.dir/run_vo.cpp.o" "gcc" "test/CMakeFiles/run_vo.dir/run_vo.cpp.o.d"
+  "/home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo2.cpp" "test/CMakeFiles/run_vo.dir/run_vo2.cpp.o" "gcc" "test/CMakeFiles/run_vo.dir/run_vo2.cpp.o.d"
   )
 
 # Targets to which this target links.

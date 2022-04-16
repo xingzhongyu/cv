@@ -19,6 +19,7 @@ namespace myslam
     public:
         typedef pcl::PointXYZRGB PointT;
         typedef pcl::PointCloud<PointT> PointCloud;
+        typedef shared_ptr<testPoint> Ptr;
 
          PointCloud::Ptr pointCloud;
         PointCloud::Ptr tmp;
