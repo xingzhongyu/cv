@@ -18,7 +18,8 @@ SET(src src/args_callback.cc src/map.cc src/map.h src/map2.cc)
 
 
 include_directories(${CMAKE_JS_INC})
-include_directories("/home/xzy/object_node2/thirdPart/node"  "/home/xzy/object_node2/thirdPart/node-addon-api "${OpenCV_INCLUDE_DIRS})
+include_directories("/home/guojiawei/cv/cv2/cv/after/after1/thirdPart/node" ${OpenCV_INCLUDE_DIRS})
+
 # LINK_DIRECTORIES(${NODE_LIBRARY_DIRS})
 ADD_LIBRARY ( ${TARGETFILENAME} SHARED 
     
@@ -29,7 +30,7 @@ include_directories( ${Sophus_INCLUDE_DIRS} )
 
 
 
-find_package(PCL 1.10 REQUIRED)
+find_package(PCL  REQUIRED)
 include_directories( ${PCL_INCLUDE_DIRS} )
 link_directories(${PCL_LIBRARY_DIRS})
 
