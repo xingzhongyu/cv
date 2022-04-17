@@ -8,6 +8,17 @@ namespace myslam
             tmp = (new PointCloud())->makeShared();
         }
     }
+     void testPoint::outPoints(vector<double> &v){
+        for(size_t i=0;i<pointCloud->points.size();i++){
+            v.push_back(pointCloud->points[i].x);
+            v.push_back(pointCloud->points[i].y);
+            v.push_back(pointCloud->points[i].z);
+            v.push_back(int(pointCloud->points[i].b));
+            v.push_back(int(pointCloud->points[i].g));
+            v.push_back(int(pointCloud->points[i].r));
+            
+        }
+    }
 
     void testPoint::getCloudPoints(cv::Point2i location, Vector3d v, Mat color)
     {

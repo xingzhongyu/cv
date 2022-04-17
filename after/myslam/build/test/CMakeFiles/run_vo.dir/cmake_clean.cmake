@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
   "../../bin/run_vo"
   "../../bin/run_vo.pdb"
-  "CMakeFiles/run_vo.dir/run_vo.cpp.o"
   "CMakeFiles/run_vo.dir/run_vo2.cpp.o"
+  "CMakeFiles/run_vo.dir/run_vo2.cpp.o.d"
+  "CMakeFiles/run_vo.dir/server.cpp.o"
+  "CMakeFiles/run_vo.dir/server.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

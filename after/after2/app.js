@@ -1,5 +1,5 @@
 "use strict";
-const hostname = '192.168.57.130';
+const hostname = '10.27.136.211';
 const port = 3000
 exports.__esmodule = true;
 var express = require("express");
@@ -61,6 +61,12 @@ app.get('/changeInit',async function(req,res){
     })
     res.end(JSON.stringify(ans));
 })
+app.get("/change",async function(req,res){
+    let ans=await sync_get({
+        url:'http://127.0.0.1:8888/change',
+        method:'get'
+    })
+})
 app.post('/upload/img', upload.array('imgfile', 2), async function (req, res) {
 
     // console.log(req);
@@ -99,6 +105,42 @@ app.post('/upload/img', upload.array('imgfile', 2), async function (req, res) {
     }
     res.end(JSON.stringify(result))
 
+})
+app.post('/img3',upload.array("imgfile",2),async function(req,res){
+    var files=req.files;
+    var result={};
+    if(!files[0]){
+        result.code = 1;
+        result.errMsg = '上传失败';
+    }else{
+        result.code=0;
+        
+        let filePath1=path.join('/home/guojiawei/cv/cv2/cv/after/after2',files[0].path);
+        let filePath2=path.join('/home/guojiawei/cv/cv2/cv/after/after2',files[1].path);
+        let body={
+            filePath1:filePath1,
+            filePath2:filePath2
+        }
+        let ans=await sync_post({
+            url: 'http://127.0.0.1:8888/test3',
+            method: 'POST',
+            json: true,
+            headers: {
+                "content-type": "application/json",
+            },
+            body: body
+        })
+        // fs.writeFile("./pointx.txt",ans.body,err=>{
+        //     if (err) {
+        //         console.error(err)
+        //         return;
+        //     }
+        // })
+        result.ans=ans;
+
+        result.msg='上传成功'
+    }
+    res.end(JSON.stringify(result));
 })
 app.post('/upload/img2',upload.array('imgfile',2),async function(req,res){
     var files=req.files;

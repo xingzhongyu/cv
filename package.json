@@ -12,6 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^4.19.5",
     "axios": "^0.26.1",
+    "cnpm": "^7.1.1",
+    "express": "^4.17.3",
     "file-saver": "^2.0.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

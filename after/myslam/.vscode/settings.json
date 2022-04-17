@@ -1,6 +1,6 @@
 {
     "cmake.debugConfig": {
-        "args": ["/home/guojiawei/cv/cv2/cv/after/myslam/config/default.yaml"]
+        "args": [" /home/guojiawei/下载/rgbd_dataset_freiburg1_xyz/rgb/1305031102.175304.png","/home/guojiawei/下载/rgbd_dataset_freiburg1_xyz/depth/1305031102.160407.png",]
         
     },
     "files.associations": {
