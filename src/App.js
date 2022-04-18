@@ -5,7 +5,8 @@ import { Button, Drawer, Grid } from '@mui/material';
 import { useState } from 'react';
 import Upload2 from './upload2/upload2';
 import axios from 'axios';
-
+import Upload3 from './upload3/upload3';
+import Point_show from './point_show/point_show';
 
 
 
@@ -14,16 +15,20 @@ import axios from 'axios';
 
 
 function App() {
-  const [pose, setPose] = useState(true);
-  const [data,setData]=useState([])
+  const [pose, setPose] = useState(1);
+  const [data, setData] = useState([])
+  const [points, set_points] = useState([])
   const handleClick = (val) => {
     if (pose !== val) {
       setPose(val)
     }
   }
-  const handleRece=(val)=>{
+  const handleRece = (val) => {
     // console.log(val)
     setData(val)
+  }
+  const handle_points = (val) => {
+    set_points(val);
   }
   const handleInit = () => {
     let config = {
@@ -31,7 +36,7 @@ function App() {
       method: 'get'
     }
     axios(config).then(function (res) {
-      if(res.statusCode==200){
+      if (res.statusCode === 200) {
         console.log(res)
       }
       window.location.reload(true)
@@ -39,6 +44,38 @@ function App() {
       console.log(err)
     })
 
+
+  }
+  const handle_init=()=>{
+    let config={
+      url:'http://10.27.136.211:3000/change',
+      method:'get'
+    }
+    axios(config).then(function(res){
+      // console.log(res)
+      if(res.statusCode===200){
+        console.log(res)
+      }
+      window.location.reload(true)
+    }).catch(function(err){
+      console.log(err)
+    })
+  }
+
+
+  let show;
+  if (pose === 1) {
+    show = <UploadImg handleRece={handleRece} />
+  } else if (pose === 0) {
+    show = <Upload2 handleRece={handleRece} />
+  } else if (pose === 2) {
+    show = <Upload3 handle_points={handle_points}></Upload3>
+  }
+  let imgShow;
+  if (pose === 0 || pose === 1) {
+    imgShow = <ImgShow data={data} />
+  } else {
+    imgShow = <Point_show points={points} />
   }
 
   return (
@@ -55,20 +92,24 @@ function App() {
               boxSizing: 'border-box',
             }
           }}>
-            <Button onClick={() => handleClick(true)} variant={pose ? "contained" : "text"}>有位姿</Button>
-            <Button onClick={() => handleClick(false)} variant={pose ? "text" : "contained"}>无位姿</Button>
+            <Button onClick={() => handleClick(1)} variant={pose == 1 ? "contained" : "text"}>有位姿</Button>
+            <Button onClick={() => handleClick(0)} variant={pose == 0 ? "contained" : "text"}>无位姿</Button>
+            <Button onClick={() => handleClick(2)} variant={pose == 2 ? "contained" : "text"} >彩色图加深度图</Button>
+
+
             <Button onClick={() => { handleInit() }} color="error">撤销</Button>
+            <Button onClick={()=> handle_init()} color="error">撤销深度图</Button>
 
           </Drawer>
         </Grid>
         <Grid item xs={3}>
           <div>
+            {show}
 
-            {pose ? <UploadImg handleRece={handleRece}/> : <Upload2 handleRece={handleRece}/>}
           </div>
         </Grid>
         <Grid item xs={5}>
-          <ImgShow data={data}/>
+          {imgShow}
         </Grid>
 
       </Grid>

@@ -474,7 +474,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "../../lib/libmyslam.so",
+				"fragment" : "../lib/libmyslam.so",
 				"role" : "libraries"
 			},
 			{

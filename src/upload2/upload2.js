@@ -26,7 +26,7 @@ function Upload2(props){
         formData.append('imgfile',file)
         let config={
             method:'post',
-            url: 'http://10.27.136.63:10001/upload/img2',
+            url: 'http://10.27.193.94:10001/upload/img2',
             headers:{
                 'Content-Type': 'multipart/form-data'
             },
