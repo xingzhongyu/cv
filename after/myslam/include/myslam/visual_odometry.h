@@ -61,6 +61,7 @@ namespace myslam
         ~VisualOdometry();
 
         bool addFrame( Frame::Ptr frame );      // add a new frame
+    void getAllPoints(vector<double> &v);
 
     protected:
         // inner operation

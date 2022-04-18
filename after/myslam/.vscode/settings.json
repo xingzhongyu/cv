@@ -1,10 +1,14 @@
 {
     "cmake.debugConfig": {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "args": ["/home/xzy/CLionProjects/myslam/config/default.yaml"]
 =======
         "args": ["/home/guojiawei/cv/cv2/cv/after/myslam/config/default.yaml"]
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
+=======
+        "args": [" /home/guojiawei/下载/rgbd_dataset_freiburg1_xyz/rgb/1305031102.175304.png","/home/guojiawei/下载/rgbd_dataset_freiburg1_xyz/depth/1305031102.160407.png",]
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
         
     },
     "files.associations": {

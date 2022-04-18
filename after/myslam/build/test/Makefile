@@ -237,6 +237,7 @@ run_vo.o: run_vo.cpp.o
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/build
 .PHONY : run_vo/fast
 
+<<<<<<< HEAD
 run_vo.o: run_vo.cpp.o
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 .PHONY : run_vo.o
@@ -283,6 +284,8 @@ run_vo.cpp.s:
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo.cpp.s
 .PHONY : run_vo.cpp.s
 
+=======
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 run_vo2.o: run_vo2.cpp.o
 .PHONY : run_vo2.o
 
@@ -307,7 +310,34 @@ run_vo2.cpp.s:
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/run_vo2.cpp.s
 .PHONY : run_vo2.cpp.s
 
+<<<<<<< HEAD
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
+=======
+server.o: server.cpp.o
+.PHONY : server.o
+
+# target to build an object file
+server.cpp.o:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/server.cpp.o
+.PHONY : server.cpp.o
+
+server.i: server.cpp.i
+.PHONY : server.i
+
+# target to preprocess a source file
+server.cpp.i:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/server.cpp.i
+.PHONY : server.cpp.i
+
+server.s: server.cpp.s
+.PHONY : server.s
+
+# target to generate assembly for a file
+server.cpp.s:
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/run_vo.dir/build.make test/CMakeFiles/run_vo.dir/server.cpp.s
+.PHONY : server.cpp.s
+
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -322,6 +352,7 @@ help:
 	@echo "... rebuild_cache"
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 	@echo "... run_vo"
+<<<<<<< HEAD
 	@echo "... run_vo.o"
 	@echo "... run_vo.i"
 	@echo "... run_vo.s"
@@ -331,6 +362,14 @@ help:
 	@echo "... run_vo2.i"
 	@echo "... run_vo2.s"
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
+=======
+	@echo "... run_vo2.o"
+	@echo "... run_vo2.i"
+	@echo "... run_vo2.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 .PHONY : help
 
 

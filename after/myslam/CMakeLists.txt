@@ -20,6 +20,7 @@ list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules )
 set( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin )
 set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib )
 
+
 ############### dependencies ######################
 # Eigen
 include_directories( "/usr/include/eigen3" )
@@ -53,7 +54,11 @@ add_definitions(${PCL_DEFINITIONS})
 =======
 set(Sophus_LIBRARIES  "/usr/local/lib/libSophus.so")
 
+find_package(workflow REQUIRED)
+include_directories(${workflow_INCLUDE_DIRS})
 
+find_package(wfrest REQUIRED)
+include_directories(${wfrest_INCLUDE_DIRS})
 
 
 
@@ -65,6 +70,8 @@ set( THIRD_PARTY_LIBS
         ${PCL_LIBRARIES}
         glog::glog
         g2o_core g2o_stuff g2o_types_sba
+        wfrest workflow 
+        jsoncpp
         )
 ############### source and test ######################
 include_directories( ${PROJECT_SOURCE_DIR}/include )

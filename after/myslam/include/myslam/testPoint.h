@@ -47,6 +47,7 @@ namespace myslam
         }
         void updateCloud();
         void getCloudPoints(cv::Point2i location, Vector3d v, Mat color);
+        void outPoints(vector<double> &v);
         ~testPoint(){
 
         }

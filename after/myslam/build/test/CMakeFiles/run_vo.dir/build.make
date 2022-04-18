@@ -111,6 +111,7 @@ include test/CMakeFiles/run_vo.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/run_vo.dir/flags.make
 
+<<<<<<< HEAD
 test/CMakeFiles/run_vo.dir/run_vo.cpp.o: test/CMakeFiles/run_vo.dir/flags.make
 test/CMakeFiles/run_vo.dir/run_vo.cpp.o: ../test/run_vo.cpp
 <<<<<<< HEAD
@@ -141,10 +142,12 @@ test/CMakeFiles/run_vo.dir/run_vo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_vo.dir/run_vo.cpp.s"
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo.cpp -o CMakeFiles/run_vo.dir/run_vo.cpp.s
 
+=======
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 test/CMakeFiles/run_vo.dir/run_vo2.cpp.o: test/CMakeFiles/run_vo.dir/flags.make
 test/CMakeFiles/run_vo.dir/run_vo2.cpp.o: ../test/run_vo2.cpp
 test/CMakeFiles/run_vo.dir/run_vo2.cpp.o: test/CMakeFiles/run_vo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guojiawei/cv/cv2/cv/after/myslam/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/run_vo.dir/run_vo2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guojiawei/cv/cv2/cv/after/myslam/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/run_vo.dir/run_vo2.cpp.o"
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/run_vo.dir/run_vo2.cpp.o -MF CMakeFiles/run_vo.dir/run_vo2.cpp.o.d -o CMakeFiles/run_vo.dir/run_vo2.cpp.o -c /home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo2.cpp
 
 test/CMakeFiles/run_vo.dir/run_vo2.cpp.i: cmake_force
@@ -155,15 +158,35 @@ test/CMakeFiles/run_vo.dir/run_vo2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_vo.dir/run_vo2.cpp.s"
 	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo2.cpp -o CMakeFiles/run_vo.dir/run_vo2.cpp.s
 
+test/CMakeFiles/run_vo.dir/server.cpp.o: test/CMakeFiles/run_vo.dir/flags.make
+test/CMakeFiles/run_vo.dir/server.cpp.o: ../test/server.cpp
+test/CMakeFiles/run_vo.dir/server.cpp.o: test/CMakeFiles/run_vo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guojiawei/cv/cv2/cv/after/myslam/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/run_vo.dir/server.cpp.o"
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/run_vo.dir/server.cpp.o -MF CMakeFiles/run_vo.dir/server.cpp.o.d -o CMakeFiles/run_vo.dir/server.cpp.o -c /home/guojiawei/cv/cv2/cv/after/myslam/test/server.cpp
+
+test/CMakeFiles/run_vo.dir/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/run_vo.dir/server.cpp.i"
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guojiawei/cv/cv2/cv/after/myslam/test/server.cpp > CMakeFiles/run_vo.dir/server.cpp.i
+
+test/CMakeFiles/run_vo.dir/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/run_vo.dir/server.cpp.s"
+	cd /home/guojiawei/cv/cv2/cv/after/myslam/build/test && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guojiawei/cv/cv2/cv/after/myslam/test/server.cpp -o CMakeFiles/run_vo.dir/server.cpp.s
+
 # Object files for target run_vo
 run_vo_OBJECTS = \
+<<<<<<< HEAD
 "CMakeFiles/run_vo.dir/run_vo.cpp.o" \
 "CMakeFiles/run_vo.dir/run_vo2.cpp.o"
 >>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
+=======
+"CMakeFiles/run_vo.dir/run_vo2.cpp.o" \
+"CMakeFiles/run_vo.dir/server.cpp.o"
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 
 # External object files for target run_vo
 run_vo_EXTERNAL_OBJECTS =
 
+<<<<<<< HEAD
 ../bin/run_vo: test/CMakeFiles/run_vo.dir/run_vo.cpp.o
 <<<<<<< HEAD
 ../bin/run_vo: test/CMakeFiles/run_vo.dir/build.make
@@ -324,7 +347,10 @@ test/CMakeFiles/run_vo.dir/clean:
 test/CMakeFiles/run_vo.dir/depend:
 	cd /home/xzy/CLionProjects/myslam/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xzy/CLionProjects/myslam /home/xzy/CLionProjects/myslam/test /home/xzy/CLionProjects/myslam/build /home/xzy/CLionProjects/myslam/build/test /home/xzy/CLionProjects/myslam/build/test/CMakeFiles/run_vo.dir/DependInfo.cmake --color=$(COLOR)
 =======
+=======
+>>>>>>> 57a421dfa97dba6cacb6f122a609cdcfae31afd2
 ../bin/run_vo: test/CMakeFiles/run_vo.dir/run_vo2.cpp.o
+../bin/run_vo: test/CMakeFiles/run_vo.dir/server.cpp.o
 ../bin/run_vo: test/CMakeFiles/run_vo.dir/build.make
 ../bin/run_vo: ../lib/libmyslam.so
 ../bin/run_vo: /usr/local/lib/libopencv_gapi.so.4.5.5

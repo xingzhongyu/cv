@@ -71,6 +71,11 @@ namespace myslam
     {
 
     }
+        void VisualOdometry::getAllPoints(vector<double> &v){
+       
+       p.outPoints(v);
+    }
+
 
     bool VisualOdometry::addFrame ( Frame::Ptr frame )
     {
