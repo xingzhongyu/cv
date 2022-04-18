@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "CXX"
@@ -33,11 +34,29 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/pcl-1.10"
   "/usr/include/ni"
   "/usr/include/openni2"
+=======
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo.cpp" "test/CMakeFiles/run_vo.dir/run_vo.cpp.o" "gcc" "test/CMakeFiles/run_vo.dir/run_vo.cpp.o.d"
+  "/home/guojiawei/cv/cv2/cv/after/myslam/test/run_vo2.cpp" "test/CMakeFiles/run_vo.dir/run_vo2.cpp.o" "gcc" "test/CMakeFiles/run_vo.dir/run_vo2.cpp.o.d"
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+<<<<<<< HEAD
   "/home/xzy/CLionProjects/myslam/build/src/CMakeFiles/myslam.dir/DependInfo.cmake"
+=======
+  "/home/guojiawei/cv/cv2/cv/after/myslam/build/src/CMakeFiles/myslam.dir/DependInfo.cmake"
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
   )
 
 # Fortran module output directory.

@@ -2,7 +2,11 @@
 ---
   # data
   # the tum dataset directory, change it to yours!
+<<<<<<< HEAD
   dataset_dir:  /home/xzy/Downloads/book/slambook/data/rgbd_dataset_freiburg1_xyz
+=======
+  dataset_dir:  /home/guojiawei/下载/rgbd_dataset_freiburg1_xyz
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 
   # camera intrinsics

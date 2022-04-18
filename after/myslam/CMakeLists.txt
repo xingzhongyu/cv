@@ -1,7 +1,20 @@
 cmake_minimum_required(VERSION 3.16)
 project(myslam)
 
+<<<<<<< HEAD
 set(CMAKE_CXX_STANDARD 14)
+=======
+set( CMAKE_BUILD_TYPE Release )
+set( CMAKE_CXX_FLAGS "-std=c++14"  )
+
+
+
+
+
+
+
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 list( APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules )
 set( EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin )
@@ -24,12 +37,27 @@ include_directories( ${G2O_INCLUDE_DIRS} )
 find_package (glog REQUIRED)
 
 #PCL
+<<<<<<< HEAD
 find_package(PCL 1.10 REQUIRED)
+=======
+find_package(PCL  REQUIRED)
+
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 include_directories( ${PCL_INCLUDE_DIRS} )
 link_directories(${PCL_LIBRARY_DIRS})
 
 add_definitions(${PCL_DEFINITIONS})
 
+<<<<<<< HEAD
+=======
+set(Sophus_LIBRARIES  "/usr/local/lib/libSophus.so")
+
+
+
+
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 set( THIRD_PARTY_LIBS
         ${OpenCV_LIBS}

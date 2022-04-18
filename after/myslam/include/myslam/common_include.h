@@ -20,6 +20,11 @@ using Sophus::SE3;
 #include <opencv2/core/core.hpp>
 using cv::Mat;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 // std
 #include <vector>
 #include <list>

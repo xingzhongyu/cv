@@ -1,7 +1,12 @@
 cmake_minimum_required( VERSION 3.10 )
 
 set( CMAKE_BUILD_TYPE Release )
+<<<<<<< HEAD
 set( CMAKE_CXX_FLAGS "-std=c++14" )
+=======
+set( CMAKE_CXX_FLAGS "-std=c++14 " )
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 # opencv
 find_package( OpenCV REQUIRED )

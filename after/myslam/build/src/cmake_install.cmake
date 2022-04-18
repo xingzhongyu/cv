@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/xzy/CLionProjects/myslam/src
+=======
+# Install script for directory: /home/guojiawei/cv/cv2/cv/after/myslam/src
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,3 +41,11 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+<<<<<<< HEAD
+=======
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+endif()
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9

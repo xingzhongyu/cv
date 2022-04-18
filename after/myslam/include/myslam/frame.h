@@ -9,6 +9,10 @@
 #include "myslam/camera.h"
 #include "myslam/testPoint.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 namespace myslam
 {
 
@@ -32,6 +36,11 @@ namespace myslam
     public: // data members
         Frame();
         Frame( long id, double time_stamp=0, SE3 T_c_w=SE3(), Camera::Ptr camera=nullptr, Mat color=Mat(), Mat depth=Mat() );
+<<<<<<< HEAD
+=======
+        // Frame( long id, SE3 T_c_w=SE3(), Camera::Ptr camera=nullptr, Mat color=Mat(), Mat depth=Mat() );
+
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
         ~Frame();
 
         // factory function
@@ -45,7 +54,11 @@ namespace myslam
 
         // check if a point is in this frame
         bool isInFrame( const Vector3d& pt_world );
+<<<<<<< HEAD
         void getPoints();
+=======
+        void getPoints(testPoint &p );
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
     };
 
 }

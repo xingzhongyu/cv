@@ -26,6 +26,10 @@
 #include "myslam/config.h"
 #include "myslam/visual_odometry.h"
 #include "myslam/g2o_types.h"
+<<<<<<< HEAD
+=======
+#include "myslam/testPoint.h"
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
 // static void testMapPoint(
 //     SE3 T,
@@ -57,6 +61,10 @@ namespace myslam
         key_frame_min_trans = Config::get<double> ( "keyframe_translation" );
         map_point_erase_ratio_ = Config::get<double> ( "map_point_erase_ratio" );
         orb_ = cv::ORB::create ( num_of_features_, scale_factor_, level_pyramid_ );
+<<<<<<< HEAD
+=======
+      
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
     }
 
     VisualOdometry::~VisualOdometry()
@@ -95,7 +103,11 @@ namespace myslam
                     {
                         addKeyFrame();
                     }
+<<<<<<< HEAD
                     // curr_->getPoints();
+=======
+                    curr_->getPoints(p);
+>>>>>>> fbc9515c775cd61c2cb5a913f937852e2c828cb9
 
                 }
                 else // bad estimation due to various reasons
