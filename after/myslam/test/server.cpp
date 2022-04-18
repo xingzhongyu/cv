@@ -22,7 +22,7 @@ int main()
     {
         changeInit();
 
-
+        resp->String("test\n");
     });
     // curl -v http://ip:port/data
     svr.GET("/data", [](const HttpReq *req, HttpResp *resp)

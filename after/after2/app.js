@@ -66,6 +66,8 @@ app.get("/change",async function(req,res){
         url:'http://127.0.0.1:8888/change',
         method:'get'
     })
+    res.send(JSON.stringify(ans))
+    
 })
 app.post('/upload/img', upload.array('imgfile', 2), async function (req, res) {
 
